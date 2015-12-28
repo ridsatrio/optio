@@ -48,9 +48,6 @@ public final class Optional<T> {
 
   /**
    * Constructs an empty instance.
-   *
-   * @implNote Generally only one empty instance, {@link Optional#EMPTY},
-   * should exist per VM.
    */
   private Optional() {
     this.value = null;
@@ -62,10 +59,6 @@ public final class Optional<T> {
    *
    * @param <T> Type of the non-existent formatted
    * @return an empty {@code Optional}
-   * @apiNote Though it may be tempting to do so, avoid testing if an object
-   * is empty by comparing with {@code ==} against instances returned by
-   * {@code Option.empty()}. There is no guarantee that it is a singleton.
-   * Instead, use {@link #isPresent()}.
    */
   public static <T> Optional<T> empty() {
     @SuppressWarnings("unchecked") Optional<T> t = (Optional<T>) EMPTY;
@@ -188,9 +181,6 @@ public final class Optional<T> {
    * between implementations and versions.
    *
    * @return the string representation of this instance
-   * @implSpec If a formatted is present the result must include its string
-   * representation in the result. Empty and present Optionals must be
-   * unambiguously differentiable.
    */
   @Override public String toString() {
     return value != null ? String.format("Optional[%s]", value) : "Optional.empty";
