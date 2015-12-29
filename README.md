@@ -10,7 +10,7 @@ Just add the dependency to your build.gradle:
 ```groovy
 
 dependencies {
-    compile 'id.ridsatrio:optio:1.0.0'
+    compile 'id.ridsatrio:optio:1.0.2'
 }
 
 ```
