@@ -1,21 +1,7 @@
 Optio - `Optional` for Android
 ============
 
-Bringing the love of Java 8's `Optional` to Android.
-
-## Download
-
-Just add the dependency to your build.gradle:
-
-```groovy
-
-dependencies {
-    compile 'id.ridsatrio:optio:1.0.2'
-}
-
-```
-
-Alternatively, you could also download the .aar file over at [BinTray](https://bintray.com/ridsatrio/maven/Optio/view).
+This project has been deprecated in favor of a better, stronger [Optional](https://github.com/MrHadiSatrio/Optional).
 
 ## License
 
