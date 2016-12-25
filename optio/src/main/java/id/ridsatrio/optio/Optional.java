@@ -38,6 +38,14 @@ import java.util.NoSuchElementException;
  * {@code java.util.function} classes.
  */
 public final class Optional<T> {
+  public interface Consumer<T> {
+    /**
+     * Performs this operation on the given argument.
+     *
+     * @param t the input argument
+     */
+    void accept(T t);
+  }
   /**
    * Common instance for {@code empty()}.
    */
@@ -128,6 +136,20 @@ public final class Optional<T> {
    */
   public boolean isPresent() {
     return value != null;
+  }
+
+
+  /**
+   * If a value is present, invoke the specified consumer with the value,
+   * otherwise do nothing.
+   *
+   * @param consumer block to be executed if a value is present
+   * @throws NullPointerException if value is present and {@code consumer} is
+   * null
+   */
+  public void ifPresent(Consumer<? super T> consumer) {
+    if (value != null)
+      consumer.accept(value);
   }
 
   /**
